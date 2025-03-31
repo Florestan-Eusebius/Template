@@ -6,8 +6,8 @@
   title: [A template for light notes],
   author: ("Feifei"),
   header: "Instruction",
-  date_created: "2025-03-27",
-  date_modified: "2025-03-30",
+  date_created: "March 27, 2025",
+  date_modified: "March 31, 2025",
   abstract: [This is a template designed for writing scientific notes. ],
   toc: true
 )

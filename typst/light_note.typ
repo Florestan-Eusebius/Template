@@ -290,7 +290,7 @@
     // )
 
     // Set paragraph properties
-    set par(leading: 1em, spacing: 1em, justify: false)
+    set par(leading: 1em, spacing: 1em, justify: true)
 
     // Set list styling
     set enum(indent: 2em, numbering: "1.a.i.")
