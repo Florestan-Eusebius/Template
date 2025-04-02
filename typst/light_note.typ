@@ -1,5 +1,6 @@
 // modified from https://github.com/mbollmann/typst-kunskap.git
 // #import "@preview/linguify:0.4.2": *
+
 #let link-color = rgb("#3282B8")
 #let muted-color = luma(160)
 #let block-bg-color = luma(240)
@@ -93,6 +94,11 @@
     //         it.description
     //     }
     // )
+    // 
+    // Set math label
+    
+    set math.equation(numbering: "(1)")
+    
 
     // Display block code with padding and shaded background
     show raw.where(block: true): block.with(
@@ -288,6 +294,9 @@
     //     weight: "regular",
     //     it.body + h(1em),
     // )
+    // Set math label
+    
+    set math.equation(numbering: "(1)")
 
     // Set paragraph properties
     set par(leading: 1em, spacing: 1em, justify: true)

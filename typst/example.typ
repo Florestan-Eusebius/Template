@@ -89,6 +89,12 @@ For example, Kitaev's paper @kitaevQuantumComputationsAlgorithms1997@kitaevAnyon
 
 If a still higher-level heading is needed, the note might be malstructured.
 
+= Equation 
+
+Equations are numbered by default,
+$ cal(F)f (k) = 1/(2 pi "i") integral "d" k thin "e"^("i"k x) f(x), $<eq:fourier>
+and you can refer to it by its number @eq:fourier.
+
 = Figure and caption
 
 This template allows for two kinds of figures. 

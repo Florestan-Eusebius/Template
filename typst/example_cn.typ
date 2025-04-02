@@ -72,6 +72,12 @@ set text(font: headings-font, weight: "regular")
 
 如果需要使用四级或以上的标题。作者对文档结构的规划可能存在问题。
 
+= 公式
+
+公式默认编号，如
+$ cal(F)f (k) = 1/(2 pi "i") integral "d" k thin "e"^("i"k x) f(x), $<eq:fourier>
+可引用其编号，如@eq:fourier。
+
 = 图片和图注
 
 本模板设定了两种图片。一种是段内图片，它由其上下文描述而不引入独立的图注和索引。因此，图后文字并不另成一段。例如，考虑如下双边图。
