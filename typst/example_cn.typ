@@ -1,4 +1,4 @@
-#import "light_note.typ": light_note_cn
+#import "light_note.typ": *
 #import "@preview/metalogo:1.2.0": TeX, LaTeX // For displaying the LaTeX logo
 #import "@preview/cetz:0.3.4": canvas, draw
 
@@ -66,7 +66,7 @@ set text(font: headings-font, weight: "regular")
 
 === 三级标题
 
-三级标题的字号大小和正文相同。一般来说，100页以下的笔记很少使用三级标题。例如，Kitaev的文章#cite(<kitaevQuantumComputationsAlgorithms1997>)#cite( <kitaevAnyonsExactlySolved2006>)#cite(<kitaevAlmostidempotentQuantumChannels2025>)和Witten的笔记#cite(<wittenNotesEntanglementProperties2018>)#cite(<wittenMiniIntroductionInformationTheory2020>)#cite(<wittenIntroductionBlackHole2025>)都不使用三级标题。
+三级标题的字号大小和正文相同。一般来说，100页以下的笔记很少使用三级标题。例如，Kitaev的文章#cite(<kitaevQuantumComputationsAlgorithms1997>)#cite( <kitaevAnyonsExactlySolved2006>)#cite(<kitaevAlmostidempotentQuantumChannels2025>)和Witten的讲义#cite(<wittenNotesEntanglementProperties2018>)#cite(<wittenMiniIntroductionInformationTheory2020>)#cite(<wittenIntroductionBlackHole2025>)都不使用三级标题。
 
 ==== 避免使用更高级标题
 
@@ -75,8 +75,18 @@ set text(font: headings-font, weight: "regular")
 = 公式
 
 公式默认编号，如
-$ cal(F)f (k) = 1/(2 pi "i") integral "d" k thin "e"^("i"k x) f(x), $<eq:fourier>
-可引用其编号，如@eq:fourier。
+$ cal(F)f (k) = 1/(2 pi "i") integral dif k thin "e"^("i"k x) f(x), $<eq:fourier>
+可引用其编号，如公式 @eq:fourier。
+一般来说，公式后不分段。如果需要以公式结束一段，则可以手动添加一个段落分隔符`#parvirtual`。例如：
+$ 1 + 1 = 2. $
+#parvirtual
+我们可以在此处继续行文。
+
+= 定理
+
+#theorem[这是一个定理。]
+
+#lemma[这是一个引理。]
 
 = 图片和图注
 

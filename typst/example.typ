@@ -1,4 +1,4 @@
-#import "light_note.typ": light_note
+#import "light_note.typ": *
 #import "@preview/metalogo:1.2.0": TeX, LaTeX // For displaying the LaTeX logo
 #import "@preview/cetz:0.3.4": canvas, draw
 
@@ -92,8 +92,23 @@ If a still higher-level heading is needed, the note might be malstructured.
 = Equation 
 
 Equations are numbered by default,
-$ cal(F)f (k) = 1/(2 pi "i") integral "d" k thin "e"^("i"k x) f(x), $<eq:fourier>
+$ cal(F)f(k) = 1/(2 pi "i") integral dif k thin "e"^("i"k x) f(x), $<eq:fourier>
 and you can refer to it by its number @eq:fourier.
+
+By default, line after an equation is not indented,
+$ 1 + 1 = 2. $
+This is an example. But if you want to end a paragraph by an equation,
+you can add a par-break manually by `#parvirtual`.
+$ 1+1 = 2. $
+#parvirtual
+And then you can add a new paragraph.
+
+= Theorems
+
+Our template provides several theorem environments through the lemmify package.
+
+#theorem[This is a theorem.]
+#lemma[This is a lemma.]
 
 = Figure and caption
 

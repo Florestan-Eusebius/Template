@@ -1,11 +1,32 @@
 // modified from https://github.com/mbollmann/typst-kunskap.git
 // #import "@preview/linguify:0.4.2": *
+// Set theorem environments
+#import "@preview/lemmify:0.1.8": *
+
+#let (
+theorem, lemma, corollary, definition,
+remark, proposition, example,
+proof, rules: thm-rules
+) = default-theorems("thm-group", lang: "en")
+
+
+#let (
+theorem, lemma, corollary, definition,
+remark, proposition, example,
+proof, rules
+) = default-theorems("thm-group", lang: "zh")
+
+#let parvirtual = {
+"" 
+context v(-par.spacing -  measure("").height)
+}
 
 #let link-color = rgb("#3282B8")
 #let muted-color = luma(160)
 #let block-bg-color = luma(240)
 
 #let text-muted(it) = {text(fill: muted-color, it)}
+
 
 // Report template
 #let light_note(
@@ -98,6 +119,20 @@
     // Set math label
     
     set math.equation(numbering: "(1)")
+    show ref: it => {
+      let eq = math.equation
+      let el = it.element
+      if el != none and el.func() == eq {
+        // Override equation references.
+        link(el.location(),numbering(
+          el.numbering,
+          ..counter(eq).at(el.location())
+        ))
+      } else {
+        // Other references as usual.
+        it
+      }
+    }
     
 
     // Display block code with padding and shaded background
@@ -211,6 +246,7 @@
         }
     }
     
+    show: thm-rules
 
     if toc{
     outline()
@@ -297,6 +333,20 @@
     // Set math label
     
     set math.equation(numbering: "(1)")
+    show ref: it => {
+      let eq = math.equation
+      let el = it.element
+      if el != none and el.func() == eq {
+        // Override equation references.
+        link(el.location(),numbering(
+          el.numbering,
+          ..counter(eq).at(el.location())
+        ))
+      } else {
+        // Other references as usual.
+        it
+      }
+    }
 
     // Set paragraph properties
     set par(leading: 1em, spacing: 1em, justify: true)
@@ -452,6 +502,7 @@
         }
     }
     
+    show: rules
 
     if toc{
     outline()
