@@ -216,7 +216,7 @@ context v(-par.spacing -  measure("").height)
     )
 
     // set citation
-    set bibliography(style: "american-physics-society")
+    set bibliography(style: "springer-mathphys")
 
     // Set title block
     {
