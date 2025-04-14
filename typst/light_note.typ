@@ -102,7 +102,7 @@ context v(-par.spacing -  measure("").height)
     set par(leading: 0.95em, spacing: 0.95em, justify: false)
 
     // Set list styling
-    // set enum(indent: 1.5em, numbering: "1.a.i.")
+    set enum(indent: 1.5em, numbering: "1.a.i.")
     set list(indent: 1.5em)
     set terms(indent: 1.5em, hanging-indent: 3em)
     // Redefine term list item in order to redefine the term font
