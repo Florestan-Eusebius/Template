@@ -1,20 +1,7 @@
 // modified from https://github.com/mbollmann/typst-kunskap.git
 // #import "@preview/linguify:0.4.2": *
 // Set theorem environments
-#import "@preview/lemmify:0.1.8": *
-
-#let (
-theorem, lemma, corollary, definition,
-remark, proposition, example,
-proof, rules: thm-rules
-) = default-theorems("thm-group", lang: "en")
-
-
-#let (
-theorem, lemma, corollary, definition,
-remark, proposition, example,
-proof, rules
-) = default-theorems("thm-group", lang: "zh")
+#import "@preview/ctheorems:1.1.3": *
 
 #let parvirtual = {
 "" 
@@ -26,6 +13,42 @@ context v(-par.spacing -  measure("").height)
 #let block-bg-color = luma(240)
 
 #let text-muted(it) = {text(fill: muted-color, it)}
+
+// Define theorem environments
+#let theorem = thmplain(
+  "theorem",
+  "Theorem",
+  separator: [#h(0.3em)],
+  namefmt: name => [(#name)],
+  titlefmt: title => strong([#title.]),
+  inset: (x:0em, y:1em)
+)
+
+#let corollary = thmplain(
+  "corollary",
+  "Corollary",
+  separator: [#h(0.3em)],
+  titlefmt: title => strong([#title.]),
+  inset: (0em)
+)
+#let lemma = thmplain(
+  "lemma",
+  "Lemma",
+  separator: [#h(0.3em)],
+  titlefmt: title => strong([#title.]),
+  inset: (0em)
+)
+// #let definition = thmbox("definition", "Definition", inset: (x: 1.2em, top: 1em))
+#let definition = thmplain(
+"definition",
+"Definition",
+  separator: [#h(0.3em)],
+  titlefmt: title => strong([#title.]),
+  inset: (0em)
+)
+
+#let example = thmplain("example", "Example").with(numbering: none)
+#let proof = thmproof("proof", "Proof",inset: 0em, separator: [.#h(0.3em)])
 
 
 // Report template
@@ -134,6 +157,8 @@ context v(-par.spacing -  measure("").height)
       }
     }
     
+    // set theorems
+    show: thmrules.with(qed-symbol: $square$)
 
     // Display block code with padding and shaded background
     show raw.where(block: true): block.with(
@@ -246,7 +271,6 @@ context v(-par.spacing -  measure("").height)
         }
     }
     
-    show: thm-rules
 
     if toc{
     outline()

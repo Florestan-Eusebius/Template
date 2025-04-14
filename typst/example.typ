@@ -105,10 +105,16 @@ And then you can add a new paragraph.
 
 = Theorems
 
-Our template provides several theorem environments through the lemmify package.
+Our template provides several theorem environments through the ctheorem package.
 
+#lorem(10)
+
+#theorem("name")[This is a theorem.]
 #theorem[This is a theorem.]
 #lemma[This is a lemma.]
+#corollary[This is a corollary.]
+#proof[This is a proof.]
+#definition[This is a definition.]
 
 = Figure and caption
 
