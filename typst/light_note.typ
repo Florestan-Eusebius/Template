@@ -45,7 +45,7 @@ context v(-par.spacing -  measure("").height)
     // Fonts
     body-font: ("New Computer Modern","Latin Modern Roman","Libertinus Serif","Noto Serif", "Songti SC"),
     body-font-size: 11pt,
-    raw-font: ("CodeNewRoman Nerd Font", "Latin Modern Mono", "Hack Nerd Font", "Hack", "Source Code Pro"),
+    raw-font: ("Cascadia Code", "Menlo", "CodeNewRoman Nerd Font", "Latin Modern Mono"),
     raw-font-size: 9pt,
     caption-size: 10pt,
     headings-font: ("Helvetica", "New Computer Modern Sans","Latin Modern Sans",  "Libertinus Sans", "Noto Sans","Heiti SC"),
@@ -69,7 +69,7 @@ context v(-par.spacing -  measure("").height)
     set document(title: title, author: author)
 
     // Set the fonts
-    set text(font: body-font, size: body-font-size)
+    set text(font: body-font, size: body-font-size, weight: 450) // book weight for New Computer Modern font
     show raw: set text(font: raw-font, size: raw-font-size)
     show math.equation: set text(font: math-font)
 
@@ -275,7 +275,7 @@ context v(-par.spacing -  measure("").height)
     // Fonts
     body-font: ("New Computer Modern","Latin Modern Roman","Libertinus Serif","Noto Serif", "Songti SC"),
     body-font-size: 11pt,
-    raw-font: ("CodeNewRoman Nerd Font", "Latin Modern Mono", "Hack Nerd Font", "Hack", "Source Code Pro", "Heiti SC"),
+    raw-font: ("Cascadia Code", "Menlo", "CodeNewRoman Nerd Font", "Latin Modern Mono"),
     raw-font-size: 9pt,
     caption-size: 10pt,
     headings-font: ("Helvetica", "New Computer Modern Sans","Latin Modern Sans",  "Libertinus Sans", "Noto Sans","Heiti SC"),
@@ -301,7 +301,7 @@ context v(-par.spacing -  measure("").height)
     set document(title: title, author: author)
 
     // Set the fonts
-    set text(font: body-font, size: body-font-size)
+    set text(font: body-font, size: body-font-size, weight: 450) // book weight for New Computer Modern font
     show raw: set text(font: raw-font, size: raw-font-size)
     show emph: set text(font: emph-font, size: body-font-size) // Kaiti instead of italic for emphasis
     show math.equation: set text(font: math-font)
