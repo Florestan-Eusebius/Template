@@ -178,10 +178,11 @@ context v(-par.spacing -  measure("").height)
     }
 
     show figure: it => {
-        if it.caption != none {
-            ""
+        if it.caption != none and it.placement == none {
+            v(2em, weak: true)
             it
-            ""
+            parvirtual
+            v(2em, weak: true)
         } else {
             it
         }
@@ -411,10 +412,11 @@ context v(-par.spacing -  measure("").height)
     }
 
     show figure: it => {
-        if it.caption != none {
-            ""
+        if it.caption != none and it.placement == none {
+            v(2em, weak: true)
             it
-            ""
+            parvirtual
+            v(2em, weak: true)
         } else {
             it
         }

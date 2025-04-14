@@ -186,6 +186,40 @@ $ 1 + 1 = 2. $
 
 图后内容另成一段。首行仍缩进。由于字号差异和竖直分隔的存在，文字并不与长图注相混淆。
 
+也可将图放在页面固定位置而非相对文字而言的固定位置。见@fig:figure_placement。
+
+#figure(
+  canvas({
+    let N = 6
+    let n = 4
+    let space = 1
+    let vspace = 2
+    let offset = (N - n) / 2
+    let r = 0.1
+    import draw: *
+    for i in range(N) {
+      circle((i*space, 0), radius: r, fill: black)
+    }
+    for i in range(n) {
+      rect((i*space + offset - r, vspace - r),(i*space + offset + r, vspace + r), fill: black)
+      i = i + 1
+    }
+    let links = ((1,2,4,5),
+                 (0,2,3,5),
+                 (0,4),
+                 (1,4))
+    for j in (0,1,2,3) {
+      for i in links.at(j) {
+        line((i*space, 0), (j*space + offset, vspace))
+      }
+    }
+    }),
+  placement: top,
+  caption: [此图固定在页面顶部。]
+)<fig:figure_placement>
+
+图后自动另起一段。
+
 = 文献引用 <文献引用>
 
 采用国标GB/T 7714-2015的引用格式。通过如下代码设置：

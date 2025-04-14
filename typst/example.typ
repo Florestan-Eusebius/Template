@@ -223,6 +223,38 @@ You can see that contents following a standalone figure is indented,
 indicating that is is a new paragraph.
 The following paragraph is well separated from the figure caption.
 
+#figure(
+  canvas({
+    let N = 6
+    let n = 4
+    let space = 1
+    let vspace = 2
+    let offset = (N - n) / 2
+    let r = 0.1
+    import draw: *
+    for i in range(N) {
+      circle((i*space, 0), radius: r, fill: black)
+    }
+    for i in range(n) {
+      rect((i*space + offset - r, vspace - r),(i*space + offset + r, vspace + r), fill: black)
+      i = i + 1
+    }
+    let links = ((1,2,4,5),
+                 (0,2,3,5),
+                 (0,4),
+                 (1,4))
+    for j in (0,1,2,3) {
+      for i in links.at(j) {
+        line((i*space, 0), (j*space + offset, vspace))
+      }
+    }
+    }),
+  placement: top,
+  caption: [A figure placed at the top of a page.]
+)<fig:figure_placement>
+
+You can also force a figure to be placed at the top of a page. See @fig:figure_placement.
+
 = Bibliography and citation
 
 Bibliography and citation style is set in 
