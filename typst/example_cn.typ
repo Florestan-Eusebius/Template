@@ -107,11 +107,11 @@ $ 1 + 1 = 2 $
 #tuilun[这是一个推论。]
 #dingyi[这是一个定义。]
 
-再来一段。
+再来一段。可以索引@thm:test。
 
 = 定理编号
 
-#dingli[这是一个定理。]
+#dingli[这是一个定理。]<thm:test>
 #yinli[这是一个引理。]
 #tuilun[这是一个推论。]
 #dingyi[这是一个定义。]

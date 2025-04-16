@@ -119,9 +119,8 @@ The space is set to weak so that no extra space is added between two theorems.]
 #proof[This is the proof.
 $ 1 + 1 = 2 $
 This is what to be prooved. 
-#lorem(24)
 
-Another paragraph of the proof.
+Another paragraph of the proof. #lorem(46)
 ]
 
 Now we have other types.
@@ -130,10 +129,12 @@ Now we have other types.
 #corollary[This is a lemma.]
 #definition[This is a lemma.]
 
+Refer to theorems by @lemma:test.
+
 = Theorem by section
 
 #theorem[Recount the theorem]
-#lemma[This is a lemma.]
+#lemma[This is a lemma.]<lemma:test>
 #corollary[This is a lemma.]
 #definition[This is a lemma.]
 
