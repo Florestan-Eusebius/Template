@@ -144,7 +144,9 @@ $ 1 + 1 = 2 $
         line((i*space, 0), (j*space + offset, vspace))
       }
     }
-    })
+    }),
+    kind: "inline",
+    supplement: none
 )
 我们紧随图片继续行文，给出对它的进一步描述，此时不应另起一段。
 

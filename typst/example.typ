@@ -172,7 +172,9 @@ For example, we can plot a bipartite graph as follows:
         line((i*space, 0), (j*space + offset, vspace))
       }
     }
-    })
+    }),
+  kind: "inline",
+  supplement: none
 )
 and go on to say something about it.
 

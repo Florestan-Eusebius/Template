@@ -86,7 +86,7 @@ context v(-par.spacing -  measure("").height)
     // )
 
     // Set paragraph properties
-    set par(leading: 0.95em, spacing: 0.95em, justify: true)
+    set par(leading: 8pt, spacing: 8pt, justify: true)
 
     // Set list styling
     set enum(indent: 1.5em, numbering: "1.a.i.")
@@ -103,6 +103,9 @@ context v(-par.spacing -  measure("").height)
     //     }
     // )
     // 
+    // Set equation spacing 
+    show math.equation.where(block: true): set block(above: 15pt, below: 15pt)
+
     // Set math label
     
     set math.equation(numbering: "(1)")
@@ -175,6 +178,10 @@ context v(-par.spacing -  measure("").height)
         }
     }
 
+    show figure.where(kind: image): set text(size: caption-size)
+    show figure.where(kind: "inline"): set text(size: caption-size)
+
+
     // Set link styling
     show link: it => {
         set text(fill: link-color)
@@ -232,7 +239,7 @@ context v(-par.spacing -  measure("").height)
         v(1em)
         if abstract != [] {
             text(font: headings-font, size: 16pt, weight: "regular", "Abstract")
-            v(0pt)
+            v(11pt)
             set par(first-line-indent: (amount: 2em))
             text(font: body-font, abstract)
         }
@@ -321,6 +328,10 @@ context v(-par.spacing -  measure("").height)
     //     weight: "regular",
     //     it.body + h(1em),
     // )
+    
+    // Set equation spacing 
+    show math.equation.where(block: true): set block(spacing: 15pt)
+
     // Set math label
     
     set math.equation(numbering: "(1)")
@@ -340,7 +351,7 @@ context v(-par.spacing -  measure("").height)
     }
 
     // Set paragraph properties
-    set par(leading: 1em, spacing: 1em, justify: true)
+    set par(leading: 8pt, spacing: 8pt, justify: true)
 
     // Set list styling
     set enum(indent: 2em, numbering: "1.a.i.")
@@ -411,6 +422,8 @@ context v(-par.spacing -  measure("").height)
             it
         }
     }
+
+    show figure.where(kind: image): set text(size: caption-size)
 
     // set indent after headings
     show selector.or(heading): it => {
@@ -492,7 +505,7 @@ context v(-par.spacing -  measure("").height)
         v(1em)
         if abstract != [] {
             text(font: headings-font, size: 16pt, weight: "regular", "摘要")
-            v(0pt)
+            v(11pt)
             set par(first-line-indent: (amount: 2em, all: true))
             text(font: body-font, abstract)
         }
