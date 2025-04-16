@@ -1,4 +1,5 @@
 #import "light_note.typ": *
+// #import "dingli.typ": *
 #import "@preview/metalogo:1.2.0": TeX, LaTeX // For displaying the LaTeX logo
 #import "@preview/cetz:0.3.4": canvas, draw
 
@@ -108,7 +109,33 @@ And then you can add a new paragraph.
 Our template provides several theorem environments through the lemmify package.
 
 #theorem[This is a theorem.]
+
+This is a paragraph after a theorem. Note the vertical space.
+
+#theorem(name: "name")[This is a theorem with name.]
+
+#theorem[This is a theorem.
+The space is set to weak so that no extra space is added between two theorems.]
+#proof[This is the proof.
+$ 1 + 1 = 2 $
+This is what to be prooved. 
+#lorem(24)
+
+Another paragraph of the proof.
+]
+
+Now we have other types.
+
 #lemma[This is a lemma.]
+#corollary[This is a lemma.]
+#definition[This is a lemma.]
+
+= Theorem by section
+
+#theorem[Recount the theorem]
+#lemma[This is a lemma.]
+#corollary[This is a lemma.]
+#definition[This is a lemma.]
 
 = Figure and caption
 

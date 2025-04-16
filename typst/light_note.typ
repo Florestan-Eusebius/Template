@@ -1,20 +1,7 @@
 // modified from https://github.com/mbollmann/typst-kunskap.git
 // #import "@preview/linguify:0.4.2": *
 // Set theorem environments
-#import "@preview/lemmify:0.1.8": *
-
-#let (
-theorem, lemma, corollary, definition,
-remark, proposition, example,
-proof, rules: thm-rules
-) = default-theorems("thm-group", lang: "en")
-
-
-#let (
-theorem, lemma, corollary, definition,
-remark, proposition, example,
-proof, rules
-) = default-theorems("thm-group", lang: "zh")
+#import "dingli.typ": *
 
 #let parvirtual = {
 "" 
@@ -99,7 +86,7 @@ context v(-par.spacing -  measure("").height)
     // )
 
     // Set paragraph properties
-    set par(leading: 0.95em, spacing: 0.95em, justify: false)
+    set par(leading: 0.95em, spacing: 0.95em, justify: true)
 
     // Set list styling
     set enum(indent: 1.5em, numbering: "1.a.i.")
@@ -193,6 +180,10 @@ context v(-par.spacing -  measure("").height)
         set text(fill: link-color)
         it
     }
+    
+    // Set theorem environments
+    
+    show: thmrules
 
     // TYPESETTING THE DOCUMENT
     // -----------------------------------------------------------------------
@@ -247,7 +238,6 @@ context v(-par.spacing -  measure("").height)
         }
     }
     
-    show: thm-rules
 
     if toc{
     outline()
@@ -451,6 +441,10 @@ context v(-par.spacing -  measure("").height)
         it
     }
 
+    // Set theorem environments
+    
+    show: thmrules
+
     // TYPESETTING THE DOCUMENT
     // -----------------------------------------------------------------------
     // Set page header and footer (numbering)
@@ -504,7 +498,6 @@ context v(-par.spacing -  measure("").height)
         }
     }
     
-    show: rules
 
     if toc{
     outline()
